@@ -1,0 +1,17 @@
+{% block select_table %}
+    <form action="/select_table" method="get">
+        <div class="form-row justify-content-center">
+            <div class="form-group mr-3">
+                <select class="form-control" id="select-table-select" name="table_name">
+                    <option>Выбрать таблицу</option>
+                    {% for table in tables %}
+                        <option>{{ table }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-outline-success" id="select-table-button" value="Выбрать">
+            </div>
+        </div>
+    </form>
+{% endblock %}
