@@ -15,7 +15,6 @@
             <div class="container-fluid d-flex justify-content-between mt-5">
                 <h4 class="d-inline-block">{{ current_table }}</h4>
                 <div>
-                    <div class="btn btn-outline-danger d-inline-block">Удалить таблицу</div>
                     <div id="add-new-row-btn" class="btn btn-outline-success d-inline-block">Добавить строку</div>
                 </div>
             </div>
@@ -23,7 +22,7 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">id</th>
                         {% for col_name in cols_names %}
                             <th scope="col">{{ col_name }}</th>
                         {% endfor %}
@@ -32,13 +31,17 @@
                     <tbody>
                     {% for row in rows %}
                         <tr>
-                            <th scope="row">{{ loop.index }}</th>
-                            {% for cell in row %}
+                            <th scope="row" class="id"> {{ row[0] }} </th>
+                            {% for cell in row[1:] %}
                                 <td>{{ cell }}</td>
                             {% endfor %}
                             <td>
-                                <div class="btn btn-outline-success invisible">применить</div>
+                                <div class="btn btn-outline-danger delete-row">удалить</div>
                             </td>
+                            <td>
+                                <div class="btn btn-outline-success invisible submit-row">применить</div>
+                            </td>
+
                         </tr>
                     {% endfor %}
                     </tbody>
