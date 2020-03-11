@@ -12,7 +12,7 @@
 
 ### Environment preparing
 - in project root directory (where this README.md is located) run `python -m venv venv`
-- if it says that there is no venv module installed, then run `pip instal venv` and do first point again
+- if it says that there is no venv module installed, then run `pip install venv` and do first point again
 - run in terminal `source venv/bin/activate`
 - run in terminal `pip install -r requirements.txt`
 
